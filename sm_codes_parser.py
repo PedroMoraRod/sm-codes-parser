@@ -39,7 +39,7 @@ def get_sm_codes(input_file: str) -> list:
     with open(input_file, 'r') as codes:
         for line in codes:
             line = line.strip() #remove white spaces at the beggining/end and newlines
-            line = line.split()
+            line = line.rsplit("\t", 1) #split by last ocurrence of tab space
             lines.append(line)
     return lines
 
